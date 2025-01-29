@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'create' => 'Create',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'view' => 'View',
+    'other' => 'Other',
+    'slider' => 'Sliders',
+    'slide' => 'Slide',
+    'user' => 'User',
+    'role' => 'Role',
+    'post' => 'Post',
+    'structure' => 'Structure',
+    'metatag' => 'SEO metatag',
+    'redirect' => 'Redirects',
+    'domain' => 'Domains',
+    'page' => 'Pages',
+    'setting' => 'Setting',
+    'translation' => 'Translation',
+    'social_network' => 'Social network',
+    'form' => 'Form',
+    'field' => 'Field form',
+    'response' => 'Response',
+    'infoblock' => 'Infoblock',
+    'menu' => 'Menu',
+    'change user password' => 'Change user password',
+    'store robots' => 'Editing the Robots.txt file',
+    'view robots' => 'Viewing the Robots.txt file',
+    'upload images' => 'Loading images',
+    'view drafts' => 'View pages that have a Draft status',
+
+];

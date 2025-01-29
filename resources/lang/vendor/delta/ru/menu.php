@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'infoblocks' => 'Инфоблоки',
+    'articles' => 'Статьи',
+    'sliders' => 'Слайдеры',
+    'projects' => 'Проекты',
+    'technologies' => 'Технологии',
+    'users' => 'Пользователи',
+    'pages' => 'Страницы',
+    'forms' => 'Формы',
+    'seo' => 'SEO',
+    'roles' => 'Роли',
+    'domains' => 'Домены',
+    'posts' => 'Посты',
+    'structures' => 'Структура сайта',
+    'settings' => 'Настройки',
+    'system' => 'Система',
+    'translations' => 'Переводы',
+    'menu' => 'Меню',
+    'navigation_menus' => 'Меню',
+    'metatags' => 'Meta теги',
+    'redirects' => 'Редиректы',
+    'main' => 'Главная',
+    'robots' => 'robots',
+    'prompts' => 'Подсказки',
+    'notifications' => 'Уведомления',
+];
