@@ -31,4 +31,9 @@ return [
     'form_fields' => 'Поля форми',
     'form_field_data' => 'Поля для випадаючого списку',
     'notifications' => 'Сповіщення',
+    'rich_documents' => 'Документи',
+    'rich_generator' => 'Rich Generator',
+    'rich_generator_documents' => 'Документи',
+    'rich_generator_brands' => 'Бренди',
+    'rich_generator_langs' => 'Мови',
 ];

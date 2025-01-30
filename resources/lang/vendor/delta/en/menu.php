@@ -28,4 +28,9 @@ return [
     'emailTemplates' => 'Letter templates',
     'email_templates' => 'Letter templates',
     'notifications' => 'Notifications',
+    'rich_documents' => 'Documents',
+    'rich_generator' => 'Rich Generator',
+    'rich_generator_documents' => 'Documents',
+    'rich_document_brands' => 'Brands',
+    'rich_document_langs' => 'Langs',
 ];

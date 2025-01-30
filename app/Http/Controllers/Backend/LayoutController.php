@@ -42,6 +42,18 @@ class LayoutController extends Controller
             )
             ->addItem(title: trans('delta::menu.pages'), permission: 'view domain', name: 'pages', url: noApiRoute('domains.index'), icon: 'web')
             ->addItem(title: trans('delta::menu.menu'), permission: 'view menu', name: 'menu', url: noApiRoute('menus.index'), icon: 'menu')
+
+            ->addItem(
+                title: trans('delta::menu.rich_generator'),
+                name: 'rich_generator',
+                icon: 'web',
+                items: BackendMenu::new($user)
+                    ->addItem(title: trans('delta::menu.rich_generator_documents'), permission: 'view rich_generator', url: noApiRoute('generator.index'))
+                    ->addItem(title: trans('delta::menu.rich_generator_brands'), permission: 'view rich_generator', url: noApiRoute('brands.index'))
+                    ->addItem(title: trans('delta::menu.rich_generator_langs'), permission: 'view rich_generator', url: noApiRoute('langs.index'))
+                    ->get()
+            )
+
             ->addItem(title: trans('delta::menu.infoblocks'), permission: 'view infoblock', name: 'infoblocks', url: noApiRoute('infoblocks.index'), icon: 'polyline')
             ->addItem(title: trans('delta::menu.forms'), permission: 'view form', name: 'forms', url: noApiRoute('forms.index'), icon: 'vertical_split')
             ->addItem(title: trans('delta::menu.seo'), name: 'seo', icon: 'search', items: BackendMenu::new($user)

@@ -1,5 +1,11 @@
 <?php
 
+use App\Modules\RichGenerator\Backend\Controllers\RichDocumentBrandsController;
+use App\Modules\RichGenerator\Backend\Controllers\RichDocumentLangsController;
+use App\Modules\RichGenerator\Backend\Controllers\RichDocumentsController;
+use App\Modules\RichGenerator\Enums\TemplateEnum;
+use App\Modules\RichGenerator\Models\RichDocumentBrand;
+use App\Modules\RichGenerator\Services\ParseHtmlService;
 use CfDigital\Delta\Core\Http\Controllers\HomePageController;
 use CfDigital\Delta\Core\Http\Controllers\PageController;
 use Illuminate\Http\Request;
@@ -17,11 +23,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('test', function (Request $request) {
+    return (new ParseHtmlService())->downloadArchive(6);
+});
+
 Route::prefix(config('delta.backend_prefix'))
     ->middleware(['web', 'api', 'localize'])
     ->group(function () {
-
         Route::get('options/layout', App\Http\Controllers\Backend\LayoutController::class);
+
+        Route::get('generator/export/{id}', [RichDocumentsController::class, 'export'])->name('generator.export');
+        Route::resource('generator', RichDocumentsController::class);
+        Route::resource('langs', RichDocumentLangsController::class);
+        Route::resource('brands', RichDocumentBrandsController::class);
     });
 
 Route::middleware(['api', 'localize'])

@@ -84,4 +84,13 @@ return [
     'notifications' => [
         'create' => 'Create notification',
     ],
+    'generator' => [
+        'create' => 'Create document',
+    ],
+    'langs' => [
+        'create' => 'Create language',
+    ],
+    'brands' => [
+        'create' => 'Create brand',
+    ],
 ];

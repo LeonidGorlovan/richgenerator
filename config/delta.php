@@ -61,6 +61,7 @@ return [
         'crud' => [
             'role', 'user', 'page', 'infoblock', 'form',
             'field', 'domain', 'structure', 'redirect', 'metatag', 'setting', 'translation', 'menu',
+            'rich_documents', 'brands', 'langs'
         ],
         'other' => [
             'view drafts', 'upload images', 'view robots', 'store robots', 'change user password'
