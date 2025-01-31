@@ -33,11 +33,11 @@ Route::prefix(config('delta.backend_prefix'))
     ->group(function () {
         Route::get('options/layout', App\Http\Controllers\Backend\LayoutController::class);
 
-        Route::get('generator/export/{id}', [RichDocumentsController::class, 'export'])->name('generator.export');
-        Route::resource('generator', RichDocumentsController::class);
-        Route::resource('langs', RichDocumentLangsController::class);
-        Route::resource('brands', RichDocumentBrandsController::class);
-        Route::resource('templatestyle', TemplateStyleController::class);
+        Route::get('generator/export/{id}', [RichDocumentsController::class, 'export'])->name('generator.export')->middleware('resource_can:rich_generator');
+        Route::resource('generator', RichDocumentsController::class)->middleware('resource_can:rich_generator');
+        Route::resource('langs', RichDocumentLangsController::class)->middleware('resource_can:rich_generator');
+        Route::resource('brands', RichDocumentBrandsController::class)->middleware('resource_can:rich_generator');
+        Route::resource('templatestyle', TemplateStyleController::class)->middleware('resource_can:template_styles');
     });
 
 Route::middleware(['api', 'localize'])
