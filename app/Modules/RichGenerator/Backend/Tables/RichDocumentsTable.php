@@ -47,7 +47,7 @@ class RichDocumentsTable extends Table
     {
         return [
             'id' => $item->id,
-            'date' => Carbon::parse($item->created_at)->format('Y-m-d'),
+            'date' => Carbon::parse($item->updated_at)->toDateString(),
             'title' => $this->text($item->title),
             'item' => $item->item,
             'brand' => RichDocumentBrand::query()->find($item->brand_id)->title ?? null,
