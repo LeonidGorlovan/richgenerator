@@ -52,7 +52,7 @@ class RichDocumentsTable extends Table
             'item' => $item->item,
             'brand' => RichDocumentBrand::query()->find($item->brand_id)->title ?? null,
             'lang' => RichDocumentLang::query()->find($item->lang_id)->title ?? null,
-            'export' => '<a href="' . route('generator.export', $item->id) . '">' . trans('delta::fields.export') . '</a>',
+            'export' => '<a href="' . config('app.url') . '/backend/generator/export/' . $item->id . '">' . trans('delta::fields.export') . '</a>',
         ];
     }
 
