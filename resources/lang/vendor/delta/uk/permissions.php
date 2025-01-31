@@ -29,4 +29,6 @@ return [
     'view robots' => 'Перегляд файла Robots.txt',
     'upload images' => 'Загрузка зображень',
     'view drafts' => 'Перегляд сторінок, що мають статус Draft',
+    'rich_generator' => 'Rich Generator',
+    'template_styles' => 'Cтилі Шаблонів',
 ];

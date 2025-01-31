@@ -2,7 +2,6 @@
 
 namespace App\Modules\RichGenerator\Backend\Controllers;
 
-
 use App\Modules\RichGenerator\Backend\Data\RichDocumentBrandData;
 use App\Modules\RichGenerator\Backend\Tables\RichDocumentBrandsTable;
 use App\Modules\RichGenerator\Models\RichDocumentBrand;

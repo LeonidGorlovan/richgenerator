@@ -29,5 +29,6 @@ return [
     'view robots' => 'Viewing the Robots.txt file',
     'upload images' => 'Loading images',
     'view drafts' => 'View pages that have a Draft status',
-
+    'rich_generator' => 'Rich Generator',
+    'template_styles' => 'Template Styles',
 ];
