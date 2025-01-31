@@ -36,4 +36,5 @@ return [
     'rich_generator_documents' => 'Документи',
     'rich_generator_brands' => 'Бренди',
     'rich_generator_langs' => 'Мови',
+    'template_styles' => 'Cтилі Шаблонів',
 ];

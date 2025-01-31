@@ -33,4 +33,5 @@ return [
     'rich_generator_documents' => 'Documents',
     'rich_document_brands' => 'Brands',
     'rich_document_langs' => 'Langs',
+    'template_styles' => 'Template Styles',
 ];

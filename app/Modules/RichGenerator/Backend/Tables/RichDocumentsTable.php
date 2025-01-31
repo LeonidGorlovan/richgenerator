@@ -2,10 +2,10 @@
 
 namespace App\Modules\RichGenerator\Backend\Tables;
 
-use App\Modules\RichGenerator\Enums\TemplateEnum;
 use App\Modules\RichGenerator\Models\RichDocument;
 use App\Modules\RichGenerator\Models\RichDocumentBrand;
 use App\Modules\RichGenerator\Models\RichDocumentLang;
+use App\Modules\RichGenerator\Models\TemplateStyle;
 use Carbon\Carbon;
 use CfDigital\Delta\Core\Services\Table;
 use CfDigital\Delta\Core\Support\Filters\FuzzyFilter;
@@ -69,10 +69,10 @@ class RichDocumentsTable extends Table
                     'key' => 'tmpl_id',
                     'type' => 'select',
                     'label' => trans('delta::fields.tmpl_id'),
-                    'options' => collect(TemplateEnum::values())->map(fn ($value, $key) => [
-                        'value' => ($key+1),
-                        'label' => $value,
-                    ]),
+                    'options' => TemplateStyle::query()->get()->map(fn ($tmpl) => [
+                        'value' => $tmpl->id,
+                        'label' => $tmpl->title,
+                    ])
                 ],
                 [
                     'key' => 'brand_id',

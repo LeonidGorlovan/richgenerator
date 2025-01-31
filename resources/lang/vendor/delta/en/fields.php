@@ -158,4 +158,6 @@ return [
     'created_at_from' => 'Сreated at (from)',
     'created_at_to' => 'Сreated at (to)',
     'export' => 'Export',
+    'style' => 'Style',
+    'active' => 'Active',
 ];

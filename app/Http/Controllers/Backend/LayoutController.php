@@ -51,6 +51,7 @@ class LayoutController extends Controller
                     ->addItem(title: trans('delta::menu.rich_generator_documents'), permission: 'view rich_generator', url: noApiRoute('generator.index'))
                     ->addItem(title: trans('delta::menu.rich_generator_brands'), permission: 'view rich_generator', url: noApiRoute('brands.index'))
                     ->addItem(title: trans('delta::menu.rich_generator_langs'), permission: 'view rich_generator', url: noApiRoute('langs.index'))
+                    ->addItem(title: trans('delta::menu.template_styles'), permission: 'view rich_generator', url: noApiRoute('templatestyle.index'))
                     ->get()
             )
 

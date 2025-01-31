@@ -90,4 +90,7 @@ return [
     'brands' => [
         'create' => 'Створення бренду',
     ],
+    'templatestyle' => [
+        'create' => 'Cтилі Шаблонів',
+    ],
 ];

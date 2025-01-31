@@ -2,9 +2,9 @@
 
 namespace App\Modules\RichGenerator\Backend\Data;
 
-use App\Modules\RichGenerator\Enums\TemplateEnum;
 use App\Modules\RichGenerator\Models\RichDocumentBrand;
 use App\Modules\RichGenerator\Models\RichDocumentLang;
+use App\Modules\RichGenerator\Models\TemplateStyle;
 use CfDigital\Delta\Core\Enums\PublishStatus;
 use CfDigital\Delta\Core\Services\CRUDFormGenerator;
 use CfDigital\Delta\Core\Services\Data;
@@ -45,9 +45,9 @@ class RichDocumentData extends Data
             ->addEditorField('html', ["required" => true, 'json' => false])
             ->addSelectField('tmpl_id', [
                 "required" => true,
-                "options" => collect(TemplateEnum::values())->map(fn ($value, $key) => [
-                    'value' => ($key+1),
-                    'label' => $value,
+                "options" => TemplateStyle::query()->get()->map(fn ($tmpl) => [
+                    'value' => $tmpl->id,
+                    'label' => $tmpl->title,
                 ]),
                 "value" => $model->tmpl_id,
             ])

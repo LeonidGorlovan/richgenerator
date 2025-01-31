@@ -93,4 +93,7 @@ return [
     'brands' => [
         'create' => 'Create brand',
     ],
+    'templatestyle' => [
+        'create' => 'Template Style',
+    ],
 ];
