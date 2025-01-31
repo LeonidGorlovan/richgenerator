@@ -2,6 +2,7 @@
 
 namespace App\Modules\RichGenerator\Services;
 
+use App\Modules\RichGenerator\Models\RichDocumentLang;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\DomCrawler\Crawler;
@@ -14,13 +15,20 @@ class ParseHtmlService
     {
         // 1. Получаем данные из БД
         $data = DB::table('rich_documents')->where('id', $id)->first();
+        $lang = RichDocumentLang::query()->find($data->lang_id);
+
         if (!$data) {
-            Log::error('Rich Documents not found');
+            Log::error('ParseHtmlService@downloadArchive: Rich Documents not found');
+            return null;
+        }
+
+        if (!$lang) {
+            Log::error('ParseHtmlService@downloadArchive: Lang not found');
             return null;
         }
 
         $item = $data->item; // Имя папки
-        $lang = $data->lang_id; // Имя вложенной папки
+        $lang = $lang->title; // Имя вложенной папки
         $htmlContent = $data->html; // HTML-код
 
         // 2. Создаём временную папку
@@ -39,7 +47,7 @@ class ParseHtmlService
         $zipFileName = storage_path("app/public/export.zip");
         $zip = new ZipArchive();
         if ($zip->open($zipFileName, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
-            Log::error('Failed to create ZIP');
+            Log::error('ParseHtmlService@downloadArchive: Failed to create ZIP');
             return null;
         }
 
