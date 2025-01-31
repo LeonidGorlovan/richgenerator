@@ -12,7 +12,6 @@ class TemplateStyleData extends Data
         public string $title,
         public string $description,
         public string $style,
-        public int $active,
     )
     {
     }
@@ -20,7 +19,6 @@ class TemplateStyleData extends Data
     public static function rules(): array
     {
         return [
-            "active" => 'nullable|int',
             "title" => 'required|string|max:255',
             "description" => 'required|string',
             "style" => 'required|string',
@@ -30,7 +28,6 @@ class TemplateStyleData extends Data
     public static function fieldsForCreation(Model $model): array
     {
         return CRUDFormGenerator::new($model, 'Default')
-            ->addCheckboxField('active', ["default" => true])
             ->addTextField('title', ["required" => true])
             ->addTextareaField('description', ["required" => true])
             ->addTextareaField('style', ["required" => true])

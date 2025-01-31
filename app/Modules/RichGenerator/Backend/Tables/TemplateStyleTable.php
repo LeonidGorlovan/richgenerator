@@ -3,12 +3,16 @@
 namespace App\Modules\RichGenerator\Backend\Tables;
 
 use App\Modules\RichGenerator\Models\TemplateStyle;
+use Carbon\Carbon;
 use CfDigital\Delta\Core\Services\Table;
 
 class TemplateStyleTable extends Table
 {
     protected const SEARCH_FIELDS = ['title', 'description'];
     protected const COLUMNS = [
+        'date' => [
+            'type' => 'text'
+        ],
         'title' => [
             'type' => 'text'
         ],
@@ -28,6 +32,7 @@ class TemplateStyleTable extends Table
     {
         return [
             'id' => $item->id,
+            'date' => Carbon::parse($item->updated_at)->toDateString(),
             'title' => $this->text($item->title),
             'description' => $this->text($item->description),
         ];
